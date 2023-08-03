@@ -50,8 +50,8 @@
    <h1>Now save the URL at any places. It will be useful in the future.</h1>
   <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/536afae1-e8f8-4d6b-bda3-d7c93ed32970" alt="Screenshot 4">
     <h3>Python Part.</h3>
-<h1>First, download the latest version of R0blUx-Gr@bber.py with imports.bat:</h1>
-<p>Before you begin to modify, you will need to launch import.bat. This will automatically install all the requirements for the program to work.</p>
+<h1>First, download the latest version of R0blUx-Gr@bber.py with requirements.bat:</h1>
+<p>Before you begin to modify, you will need to launch requirements.bat. This will automatically install all the requirements for the program to work.</p>
 <p>Now, you will need a text editor like Notepad++ or PyCharm Community Edition.</p>
 <p>If you prefer, you can use the default Notepad on your system as well.</p>
 <p>Now, open the R0blUx-Gr@bber.py file by right-clicking it and choosing "Edit" with your selected text editor.</p>
