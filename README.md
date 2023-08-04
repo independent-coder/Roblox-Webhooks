@@ -44,6 +44,8 @@
         <h4>4. Public IP and Private IP.</h4>
         <h4>5. Computer Information: Computer name, processor, RAM, machine architecture, operating system (OS), OS release, OS version, MAC address.</h4>
         <h4>6. And a little tutorial to know how to access the account.</h4>
+      <h1>Future Feature:</h1>
+      <h4>Can take as screenshot when launch and send it to the hacker</h4>
     </div>
 
 
