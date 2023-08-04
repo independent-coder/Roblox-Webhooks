@@ -102,7 +102,7 @@
 <h3>Now I will explain how the code will work.</h3>
 <h3>First, the code will send a message with the <a href="#webhook">webhook</a> from Discord that you provided earlier.</h3>
 <h3>The code will search through all the possible browsers to find the Roblox cookie and then send it on Discord.</h3>
-<h3>Also, the message will provide the name on Roblox of the victim, their public IP address, how many Robux they have, and how many times their account was created.</h3>
+<h3>Also, the message will provide the name on Roblox of the victim, their public IP address and PRIVATE LONGITUDE LATITUDE COUNTRY CITY AND REGION, how many Robux they have, and how many times their account was created.</h3>
 <h3>And a quick explanation of how to enter the victim's account.</h3>
 
 <h1>Thank for the people will use my tool and star my project !</h1>
