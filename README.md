@@ -28,6 +28,7 @@
 
 <div align="center">
   <h2>What's up everybody! I made a Roblox 🍪 Stealer. The cookie will be sent by a Webhooks on Discord.</h2>
+  <h2>BEFORE I CONTINUE THIS TOOL WHAS MADE FOR EDUCATIONAL PURPOSES ONLY !</h2>
   <h2>Table of Contents 📖</h2>
   <ul>
     <li><a href="#setup">1. Install/Setup</a></li>
