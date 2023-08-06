@@ -30,7 +30,8 @@
         <p><strong>BEFORE I CONTINUE THIS TOOL WAS MADE FOR EDUCATIONAL PURPOSES ONLY!</strong></p>
         <h2>Table of Contents 📖</h2>
         <ul style="list-style-type: none;">
-            <li><a href="feature">Feature</a></li>
+            <li><a href="#feature">Feature</a></li>
+            <li><a href="#suppports">Supports</a></li>
             <li><a href="#setup">1. Install/Setup</a></li>
             <li><a href="#compile">2. Compile the py file</a></li>
             <li><a href="#conclusion">3. Conclusion</a></li>
@@ -40,16 +41,39 @@
         <h4>Features Available:</h4>
         <h4>1. View information about the victim's Roblox account: UserName, Robux balance, Premium status, RAP, and Number of friends.</h4>
         <h4>2. Roblox Cookie Grabber.</h4>
+        <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/a8be7016-4bca-4f6a-ad2b-7e441088a40e">
         <h4>3. Location: CITY, REGION, COUNTRY (LATITUDE, LONGITUDE).</h4>
         <h4>4. Public IP and Private IP.</h4>
+        <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/4c0e5bb0-2c35-4bbb-9cb5-b2f60a3a0f84">
         <h4>5. Computer Information: Computer name, processor, RAM, machine architecture, operating system (OS), OS release, OS version, MAC address.</h4>
+        <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/a52b82ec-371e-4d32-94a0-ce82a49c64b6">
         <h4>6. Take a screenshot after 5 seconds.</h4>
-        <h4>7. Show and generate an html disclaimer page to the victim.</h4>
+         <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/8e657770-815b-4e18-86d5-f211afac7d5c">
+        <h4>7. Show and generate an html disclaimer page to the victim. PS: You can modify the html page to troll the victim.</h4>
+        <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/51dd4eb3-72f9-45e3-97b7-14fdf747743c">
+        <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/fffafee2-6b35-408f-962a-6cca07a7d944">
         <h4>8. And a little tutorial to know how to access the account.</h4>
-      <h1>Future Feature:</h1>
-      <h4>See the opened app on victims' computer.</h4>
-      <h4>Troll: Make victim input key INS.</h4>
+        <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/7e9b8457-6fc0-48d5-a0a2-8ef9b3fcd413">
+        <h1>Future Feature:</h1>
+        <h4>See the opened app on victims' computer.</h4>
+        <h4>Troll: Make victim input key INS.</h4>
     </div>
+
+<div id="suppports" align="center">
+      <h1>What browser the grabber support ?</h1>
+      <h1>The grabber support:</h1>
+      <ul style="list-style-type: none;">
+          <li><a href="https://www.google.com/intl/en/chrome/">Google Chrome</a></li>
+          <li><a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a></li>
+          <li><a href="https://en.wikipedia.org/wiki/Safari_web_browser">Safari</a></li>
+          <li><a href="https://www.chromium.org/Home/">Chromimum</a></li>
+          <li><a href="https://www.microsoft.com/en-us/edge?form=MA13FJ&exp=e00">Microsoft Edge</a></li>
+          <li><a href="https://www.opera.com/en/gx">Opera GX</a></li>
+          <li><a href="https://www.opera.com/en/">Opera</a></li>
+          <li><a href="https://brave.com">Brave</a></li>
+          <li><a href="https://librewolf.net">LibreWolf</a></li>
+      </ul>
+
 
 
 
