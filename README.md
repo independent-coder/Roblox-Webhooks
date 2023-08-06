@@ -44,10 +44,11 @@
         <h4>4. Public IP and Private IP.</h4>
         <h4>5. Computer Information: Computer name, processor, RAM, machine architecture, operating system (OS), OS release, OS version, MAC address.</h4>
         <h4>6. Take a screenshot after 5 seconds.</h4>
-        <h4>7. And a little tutorial to know how to access the account.</h4>
+        <h4>7. Show and generate an html disclaimer page to the victim.</h4>
+        <h4>8. And a little tutorial to know how to access the account.</h4>
       <h1>Future Feature:</h1>
-      <h4>Display a local html page for hacker to put text.</h4>
       <h4>See the opened app on victims' computer.</h4>
+      <h4>Troll: Make victim input key INS.</h4>
     </div>
 
 
