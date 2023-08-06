@@ -27,7 +27,7 @@
 </div>
     <div align="center">
         <h2>What's up everybody! I made a Roblox 🍪 Stealer. The cookie will be sent by a Webhooks on Discord.</h2>
-        <p><strong>BEFORE I CONTINUE THIS TOOL WAS MADE FOR EDUCATIONAL PURPOSES ONLY!</strong></p>
+        <p><strong>⚠ WARNING:BEFORE I CONTINUE THIS TOOL WAS MADE FOR EDUCATIONAL PURPOSES ONLY!</strong></p>
         <h2>Table of Contents 📖</h2>
         <ul style="list-style-type: none;">
             <li><a href="#feature">Feature</a></li>
