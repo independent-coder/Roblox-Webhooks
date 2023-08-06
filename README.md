@@ -100,7 +100,7 @@
 <p>Now, you will need a text editor like Notepad++ or PyCharm Community Edition.</p>
 <p>If you prefer, you can use the default Notepad on your system as well.</p>
 <p>Now, open the R0blUx-Gr@bber.py file by right-clicking it and choosing "Edit" with your selected text editor.</p>
-<p>Locate line 187 and remove the preexisting text. Replace it with the webhook url that we save before if you dont have an webhook please click <a href="#webhook">here</a>  to know how to have one.</p>
+<p>Locate line 428 and remove the preexisting text. Replace it with the webhook url that we save before if you dont have an webhook please click <a href="#webhook">here</a>  to know how to have one.</p>
 <p>Once you have made the necessary modifications, you can save and close the file. Remember, the script is open-source, so you can customize it further if needed.</p>
 <p>If you're ready to launch the attack, you have two options:</p>
 <ul>
