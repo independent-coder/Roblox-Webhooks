@@ -55,6 +55,7 @@
         <h4>8. And a little tutorial to know how to access the account.</h4>
         <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/7e9b8457-6fc0-48d5-a0a2-8ef9b3fcd413">
         <h1>Future Feature:</h1>
+          <h4>Nearly available: Have the possiblity of taking a screenshot at any moment.</h4>
         <h4>Email taker.</h4>
         <h4>Password forwarders.</h4>
         <h4>See the opened app on victims' computer.</h4>
