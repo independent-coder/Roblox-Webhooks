@@ -27,6 +27,7 @@
 </div>
     <div align="center">
         <h2>What's up everybody! I made a Roblox 🍪 Stealer. The cookie will be sent by a Webhooks on Discord.</h2>
+        <h2>Supports more than 19 different Browser.</h2>
         <p><strong>⚠ WARNING:BEFORE I CONTINUE THIS TOOL WAS MADE FOR EDUCATIONAL PURPOSES ONLY!</strong></p>
         <h2>Table of Contents 📖</h2>
         <ul style="list-style-type: none;">
@@ -75,6 +76,16 @@
           <li><a href="https://www.opera.com/en/">Opera</a></li>
           <li><a href="https://brave.com">Brave</a></li>
           <li><a href="https://librewolf.net">LibreWolf</a></li>
+          <li><a href="https://vivaldi.com">Vivaldi</li>
+          <li><a href="https://support.microsoft.com/en-us/windows/internet-explorer-downloads-d49e1f0d-571c-9a7b-d97e-be248806ca70">Internet Explorer 11</li>
+          <li><a href="https://support.microsoft.com/en-us/microsoft-edge/what-is-microsoft-edge-legacy-3e779e55-4c55-08e6-ecc8-2333768c0fb0">Edge (Legacy)</li>  
+          <li><a href="https://www.mozilla.org/en-US/firefox/enterprise/">Firefox ESR</li>
+          <li><a href="https://brave.com/download-beta/">Brave Beta</li>
+          <li><a href="https://www.palemoon.org">Pale Moon</li>
+          <li><a href="https://www.waterfox.net/en-US/">Waterfox</li>
+          <li><a href="https://browser.yandex.com">Yandex Browser</li>
+          <li><a href="https://astian.org/midori-browser/">Midori browser</li>
+          <li><a href="https://www.maxthon.com/en/">Maxthon browser</li>
       </ul>
 
 
