@@ -35,7 +35,8 @@
             <li><a href="#suppports">Supports</a></li>
             <li><a href="#setup">1. Install/Setup</a></li>
             <li><a href="#compile">2. Compile the py file</a></li>
-            <li><a href="#conclusion">3. Conclusion</a></li>
+            <li><a href="#usage">3. Usage</a></li>
+            <li><a href="#conclusion">4. Conclusion</a></li>
         </ul>
     </div>
     <div id="feature" align="center">
@@ -182,6 +183,36 @@
   <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/b935b928-6bf1-45a6-8ef0-18c7b7cd3670" alt="Screenshot 8">
   <h3>You wait about 1 min and it compile and ready to be send to the victim !</h3>
 </div>
+
+
+<div id="usage" align="center">
+<h1>Usage.</h1>
+<h3>Now that you have the compiled exe file, you will send it to the victim by discord or an another way.</h3>
+<h3>Once the victim launch the exe you will start receiving some basic info with the roblox cookie using <a href="#webhook">Discord webhook</a>.</h3>
+<h3>And you will receive an screenshot from the victim'pc.</h3>
+<h3>Now you have acess to the bot.</h3>
+<h3>So here the list of the command.</h3>
+<h5>List of Commands</h5>
+<code>!Help</code>
+<h5>Need Help ? No problem.</h5>
+<code>!camcheck</code>
+<h5>Take a 30 seconds video and send to hacker. 📷</h5> 
+<code>!Bookmarks</code>
+<h5>Take every bookmarks on the default browser⭐.</h5>
+<code>!history</code>
+<h5>Take the history and put it into an csv file and json put into a zip :black_large_square: :orange_square: :smirk:</h5>
+<code>!insert</code>
+<h5>Input victims computer Insert key. :rage:</h5>
+<code>!terminate</code>
+<h5>Terminate the tool running on victim's computer :skull_crossbones:</h5>
+<code>!clear</code>
+<h5>Delete message using (!clear NUMBER) because it can be messy !</h5>
+<code>!SH</code>
+<h5>Shows up any message using notepad :computer:</h5>
+<h5>Here the three types of command !SH save YOUR SENTENCE, !SH display, !SH remove</h5>
+<code>!SH save</code><h5> = save your sentence</h5>
+<code>!SH display</code><h5> = display your sentence</h5>
+<code>!SH remove</code><h5> = remove sentence.txt</h5>
 
 
 <div id="conclusion" align="center">
